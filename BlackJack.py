@@ -72,3 +72,27 @@ def banca2carta():
     darcartaalabanca = listacartas.pop(nrandom)
     cartasbanca.append(darcartaalabanca)
     numerodecartas -= 2
+
+#Función para pasar turno
+
+def pasarturno():
+    print("Ha decidido pasar turno")
+
+#Función para plantarse
+
+def plantarse():
+    puntosjugador = sum(cartasjugador)
+    puntosbanca = sum(cartasbanca)
+    if puntosbanca > 21 and puntosjugador < 21:
+        print("¡Ha ganado!, su puntuación ha sido de " + str(puntosjugador) + " puntos, la banca obtenido  " + str(puntosbanca) + " puntos.")
+    elif puntosjugador > 21:
+        print("Ha perdido, su puntuación ha sido de " + str(puntosjugador) + " puntos, la banca ha obtenido " + str(puntosbanca) + " puntos.")
+    elif puntosjugador < puntosbanca <= 21:
+        print("Ha perdido, su puntuación ha sido de " + str(puntosjugador) + " puntos, la banca ha obtenido " + str(puntosbanca) + " puntos.")
+    elif puntosjugador > puntosbanca and puntosjugador <= 21:
+        print("¡Ha ganado!, su puntuación ha sido de " + str(puntosjugador) + " puntos, la banca obtenido  " + str(puntosbanca) + " puntos.")
+    elif puntosjugador == puntosbanca:
+        print("Ha empatado la partida con la banca.")
+    sys.exit()
+
+#Desarrollo del juego
