@@ -53,3 +53,22 @@ def cogesegundacarta():
     cartasjugador.append(darcartaaljugador)
     numerodecartas -= 2
     print(cartasjugador)
+
+#Comenzamos a repartir cartas a la banca
+
+def bancaprimeracarta():
+    global numerodecartas
+    nrandom = random.randint(1, len(listacartas))
+    darcartaalabanca = listacartas.pop(nrandom)
+    cartasbanca.append(darcartaalabanca)
+    numerodecartas -= 1
+
+def banca2carta():
+    global numerodecartas
+    nrandom = random.randint(1, len(listacartas))
+    darcartaalabanca = listacartas.pop(nrandom)
+    cartasbanca.append(darcartaalabanca)
+    nrandom = random.randint(1, len(listacartas))
+    darcartaalabanca = listacartas.pop(nrandom)
+    cartasbanca.append(darcartaalabanca)
+    numerodecartas -= 2
