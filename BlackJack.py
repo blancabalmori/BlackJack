@@ -18,3 +18,15 @@ cartas = {
     chr(0x1f0ad): 10,
     chr(0x1f0ae): 10,
 }
+
+#Convertir diccionario en lista
+
+print(cartas)
+listacartas = list(cartas.keys()) * 4
+numerodecartas = 52
+
+#Creo banca
+
+cartasjugador = []
+cartasbanca = []
+
