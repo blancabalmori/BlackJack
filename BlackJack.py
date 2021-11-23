@@ -63,7 +63,7 @@ def bancaprimeracarta():
     cartasbanca.append(darcartaalabanca)
     numerodecartas -= 1
 
-def banca2carta():
+def bancasegundacarta():
     global numerodecartas
     nrandom = random.randint(1, len(listacartas))
     darcartaalabanca = listacartas.pop(nrandom)
@@ -72,11 +72,6 @@ def banca2carta():
     darcartaalabanca = listacartas.pop(nrandom)
     cartasbanca.append(darcartaalabanca)
     numerodecartas -= 2
-
-#Función para pasar turno
-
-def pasarturno():
-    print("Ha decidido pasar turno")
 
 #Función para plantarse
 
@@ -96,3 +91,26 @@ def plantarse():
     sys.exit()
 
 #Desarrollo del juego
+
+def partidabanca():
+    if sum(cartasbanca) >= 16:
+        plantarse()
+
+def partida():
+    print("Quedan " + str(numerodecartas) + " cartas.")
+    print("¿Qué desea hacer? 1: tomar otra carta 2: plantarse")
+    decision = int(input())
+    if decision == 1:
+        print()
+    elif decision == 2:
+        plantarse()
+    while decision != 2:
+        cogeprimeracarta()
+        partidabanca()
+        partida()
+
+print("Comienza la partida")
+cogesegundacarta()
+bancasegundacarta()
+print(cartasjugador)
+partida()
